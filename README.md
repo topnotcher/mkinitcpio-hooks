@@ -1,4 +1,4 @@
 mkinitcpio-hooks
 ================
 
-mkinitcpio hooks for NVIDIA and Virtualbox
+mkinitcpio hooks for NVIDIA and Virtualbox modules
