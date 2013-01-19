@@ -10,7 +10,7 @@ build ()
 
 help ()
 {
-  cat<<HELPEOF
+cat<<HELPEOF
     This hook rebuilds nvidia modules. It does nothing to the initrd image.
-  HELPEOF
+HELPEOF
 }
