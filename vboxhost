@@ -2,9 +2,9 @@
 
 build ()
 {
-  _version=$(pacman -Qs '^virtualbox$'|sed 's/^[^ ]* \|-[0-9]*$//g;2d')
+  _version=$(pacman -Qs virtualbox-host-dkms | sed 's/^[^ ]* \|-[0-9]*$//g;2d')
   echo "Building virtualbox host modules for ${KERNELVERSION} kernel..."
-  dkms install vboxhost/$_version -k ${KERNELVERSION}/arch
+  dkms install vboxhost/$_version -k ${KERNELVERSION}/_arch
   echo "Ok."
 }
 
