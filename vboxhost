@@ -3,7 +3,7 @@
 build ()
 {
   _version=$(pacman -Qs '^virtualbox$'|sed 's/^[^ ]* \|-[0-9]*$//g;2d')
-  echo "Building virtualbox modules for ${KERNELVERSION} kernel..."
+  echo "Building virtualbox host modules for ${KERNELVERSION} kernel..."
   dkms install vboxhost/$_version -k ${KERNELVERSION}/arch
   echo "Ok."
 }
@@ -11,6 +11,6 @@ build ()
 help ()
 {
 cat<<HELPEOF
-    This hook rebuilds virtualbox modules. It does nothing to the initrd image.
+  This hook rebuilds virtualbox host modules. It does nothing to the initrd image.
 HELPEOF
 }
