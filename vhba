@@ -2,7 +2,7 @@
 
 build ()
 {
-  _version=$(pacman -Qs dkms-vhba | sed 's/^[^ ]* \|-[0-9]*$//g;2d')
+  _version=$(pacman -Qs vhba-dkms | sed 's/^[^ ]* \|-[0-9]*$//g;2d')
   echo "Building vhba modules for ${KERNELVERSION} kernel..."
   dkms install vhba/${_version} -k ${KERNELVERSION}/_arch
   echo "Ok."
