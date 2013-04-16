@@ -1,0 +1,16 @@
+# vim: set ft=sh:
+
+build ()
+{
+  _version=$(pacman -Qs bbswitch-dkms | sed 's/^[^ ]* \|-[0-9]*$//g;2d')
+  echo "Building bbswitch modules for ${KERNELVERSION} kernel..."
+  dkms install bbswitch/${_version} -k ${KERNELVERSION}/_arch
+  echo "Ok."
+}
+
+help ()
+{
+cat<<HELPEOF
+    This hook rebuilds bbswitch modules. It does nothing to the initrd image.
+HELPEOF
+}
